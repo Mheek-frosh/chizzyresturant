@@ -4,6 +4,12 @@ import Hero from './components/Hero';
 import MenuSection from './components/MenuSection';
 import CartDrawer from './components/CartDrawer';
 import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
+import About from './components/About';
+import Promotions from './components/Promotions';
+import Reservation from './components/Reservation';
+import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 import { categories } from './data/menu';
 
 function App() {
@@ -16,13 +22,14 @@ function App() {
     setCartItems(prev => {
       const existing = prev.find(i => i.id === item.id);
       if (existing) {
+        setIsCartOpen(true); // Open upon adding
         return prev.map(i =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
+      setIsCartOpen(true);
       return [...prev, { ...item, quantity: 1 }];
     });
-    setIsCartOpen(true);
   };
 
   const removeFromCart = (id) => {
@@ -35,11 +42,14 @@ function App() {
         return { ...item, quantity: Math.max(1, item.quantity + delta) };
       }
       return item;
-    }).filter(item => item.quantity > 0)); // Extra safety, though disabled button handles logic
+    }).filter(item => item.quantity > 0));
   };
 
   return (
-    <div className="bg-brand-gray min-h-screen">
+    <div className="font-sans antialiased bg-gray-50 text-brand-black">
+      <ScrollToTop />
+      <WhatsAppButton cartItems={cartItems} />
+
       <Navbar
         cartCount={cartCount}
         toggleCart={() => setIsCartOpen(!isCartOpen)}
@@ -47,7 +57,16 @@ function App() {
 
       <Hero />
 
-      <main id="menu" className="pt-8 pb-16 space-y-8 bg-brand-gray">
+      <About />
+
+      <Promotions />
+
+      <main id="menu" className="py-20 space-y-24 bg-brand-gray relative">
+        <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+          <h2 className="font-display text-4xl font-bold text-brand-black mb-4">Our Menu</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">Explore a symphony of flavors, carefully curated to delight your senses.</p>
+        </div>
+
         {categories.map((category) => (
           <MenuSection
             key={category.id}
@@ -58,17 +77,9 @@ function App() {
         ))}
       </main>
 
-      <section id="about" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-4xl font-bold text-brand-black mb-6">Our Story</h2>
-          <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
-            Chizzy Restaurant was born from a passion for authentic flavors and community.
-            Whether you are craving the comfort of home-cooked Nigerian dishes or the excitement
-            of international cuisine, we bring the best of both worlds to your table.
-            Fresh ingredients, premium quality, and love in every bite.
-          </p>
-        </div>
-      </section>
+      <Testimonials />
+
+      <Reservation />
 
       <div id="contact">
         <Footer />

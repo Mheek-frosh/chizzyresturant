@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/chilogo.jpeg';
 
 const Navbar = ({ cartCount, toggleCart }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -7,45 +9,58 @@ const Navbar = ({ cartCount, toggleCart }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const navLinks = [
+        { name: 'Home', href: '#' },
+        { name: 'Menu', href: '#menu' },
+        { name: 'About', href: '#about' },
+        { name: 'Contact', href: '#contact' },
+    ];
+
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || mobileMenuOpen ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
-            }`}>
+        <nav
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || mobileMenuOpen
+                ? 'bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-sm'
+                : 'bg-transparent'
+                }`}
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <h1 className={`font-display text-2xl font-bold ${scrolled || mobileMenuOpen ? 'text-brand-black' : 'text-brand-black'
-                            }`}>
-                            Chizzy<span className="text-brand-red">.</span>
-                        </h1>
-                    </div>
+                    {/* Logo */}
+                    <a href="#" className="flex-shrink-0 flex items-center gap-2">
+                        <img
+                            src={logo}
+                            alt="Chizzy Restaurant"
+                            className="h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md hover:scale-105 transition-transform duration-300"
+                        />
+                    </a>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-8 items-center">
-                        {['Home', 'Menu', 'About', 'Contact'].map((item) => (
+                        {navLinks.map((item) => (
                             <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className="text-brand-black hover:text-brand-red font-medium transition-colors"
+                                key={item.name}
+                                href={item.href}
+                                className="text-sm font-medium text-brand-black hover:text-brand-red transition-colors relative group"
                             >
-                                {item}
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all group-hover:w-full"></span>
                             </a>
                         ))}
 
-                        {/* Cart Icon */}
                         <button
                             onClick={toggleCart}
-                            className="relative p-2 text-brand-black hover:text-brand-red transition-colors"
+                            className="relative p-2 text-brand-black hover:text-brand-red transition-colors bg-gray-100 hover:bg-gray-200 rounded-full"
                         >
-                            <ShoppingBag size={24} />
+                            <ShoppingBag size={20} />
                             {cartCount > 0 && (
-                                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-brand-red rounded-full">
+                                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-[10px] font-bold text-white bg-brand-red rounded-full ring-2 ring-white">
                                     {cartCount}
                                 </span>
                             )}
@@ -53,10 +68,21 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden flex items-center gap-4">
+                        <button
+                            onClick={toggleCart}
+                            className="relative p-2 text-brand-black"
+                        >
+                            <ShoppingBag size={24} />
+                            {cartCount > 0 && (
+                                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold text-white bg-brand-red rounded-full">
+                                    {cartCount}
+                                </span>
+                            )}
+                        </button>
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="text-brand-black p-2"
+                            className="text-brand-black p-1"
                         >
                             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
@@ -64,33 +90,30 @@ const Navbar = ({ cartCount, toggleCart }) => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="md:hidden bg-white/95 backdrop-blur-md absolute w-full transition-all">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-                        {['Home', 'Menu', 'About', 'Contact'].map((item) => (
-                            <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                className="block px-3 py-2 text-base font-medium text-brand-black hover:text-brand-red hover:bg-brand-gray/50 rounded-md"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                {item}
-                            </a>
-                        ))}
-                        <button
-                            onClick={() => {
-                                toggleCart();
-                                setMobileMenuOpen(false);
-                            }}
-                            className="w-full mt-4 flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-red hover:bg-red-700"
-                        >
-                            <ShoppingBag className="mr-2" size={20} />
-                            View Cart ({cartCount})
-                        </button>
-                    </div>
-                </div>
-            )}
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+                    >
+                        <div className="px-4 pt-4 pb-6 space-y-2">
+                            {navLinks.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="block px-4 py-3 text-lg font-medium text-brand-black hover:text-brand-red hover:bg-gray-50 rounded-xl"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {item.name}
+                                </a>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
