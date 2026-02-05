@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
+import logo from '../assets/chilogo.jpeg';
 
 const Footer = () => {
     return (
@@ -8,7 +9,13 @@ const Footer = () => {
 
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
-                        <h3 className="font-display text-2xl font-bold mb-4">Chizzy<span className="text-brand-red">.</span></h3>
+                        <a href="#" className="inline-block mb-4">
+                            <img
+                                src={logo}
+                                alt="Chizzy Restaurant"
+                                className="h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md"
+                            />
+                        </a>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             Experience the authentic taste of African and Continental dishes prepared with love and passion.
                         </p>

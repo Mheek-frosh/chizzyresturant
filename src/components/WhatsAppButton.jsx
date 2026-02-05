@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import WhatsAppModal from './WhatsAppModal';
 
 const WhatsAppButton = ({ cartItems = [] }) => {
