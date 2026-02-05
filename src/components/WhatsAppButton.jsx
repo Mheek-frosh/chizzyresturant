@@ -44,14 +44,14 @@ const WhatsAppButton = ({ cartItems = [] }) => {
                         animate={{ scale: 1 }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all flex items-center justify-center relative"
+                        className="bg-gradient-to-r from-brand-red to-[#b90422] text-white p-4 rounded-full shadow-xl hover:shadow-brand-red/40 transition-all flex items-center justify-center relative ring-4 ring-white/30 backdrop-blur-sm"
                         aria-label="Chat on WhatsApp"
                     >
                         <MessageCircle size={28} fill="white" />
 
                         {/* Cart Badge */}
                         {cartItems.length > 0 && (
-                            <span className="absolute -top-1 -left-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+                            <span className="absolute -top-1 -left-1 bg-black text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
                                 {cartItems.length}
                             </span>
                         )}
