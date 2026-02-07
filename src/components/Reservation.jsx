@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Reservation = () => {
     return (
-        <section id="reservation" className="relative py-24 mx-4 my-20 rounded-3xl overflow-hidden max-w-7xl md:mx-auto">
+        <section id="reservation" className="relative py-16 md:py-24 mx-4 my-10 md:my-20 rounded-3xl overflow-hidden max-w-7xl md:mx-auto">
             {/* Background */}
             <div className="absolute inset-0">
                 <img
@@ -33,7 +33,7 @@ const Reservation = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl"
+                    className="bg-white/10 backdrop-blur-md p-6 md:p-12 rounded-3xl border border-white/20 shadow-2xl"
                 >
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                         <div className="text-left">

@@ -37,7 +37,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                         <img
                             src={logo}
                             alt="Chizzy Restaurant"
-                            className="h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md hover:scale-105 transition-transform duration-300"
+                            className="h-12 md:h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md hover:scale-105 transition-transform duration-300"
                         />
                     </a>
 

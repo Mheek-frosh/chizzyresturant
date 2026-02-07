@@ -44,7 +44,7 @@ const About = () => {
                         <img
                             src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&q=80&w=1000"
                             alt="Chefs cooking"
-                            className="rounded-3xl shadow-xl w-full h-[500px] object-cover"
+                            className="rounded-3xl shadow-xl w-full h-[350px] md:h-[500px] object-cover"
                         />
 
                         <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-lg max-w-[200px] hidden md:block">

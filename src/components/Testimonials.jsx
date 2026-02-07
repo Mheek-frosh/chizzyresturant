@@ -46,7 +46,7 @@ const Testimonials = () => {
                     transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                 >
                     {[...testimonials, ...testimonials].map((t, i) => (
-                        <div key={i} className="min-w-[350px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-4">
+                        <div key={i} className="min-w-[280px] md:min-w-[350px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-4">
                             <p className="text-gray-600 italic whitespace-normal">"{t.text}"</p>
                             <div className="flex items-center gap-4 mt-auto">
                                 <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover" />

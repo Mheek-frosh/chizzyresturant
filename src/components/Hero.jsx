@@ -76,7 +76,7 @@ const Hero = () => {
                             {slides[current].subtitle}
                         </motion.span>
 
-                        <h1 className="font-display text-4xl md:text-7xl font-bold leading-tight mb-6">
+                        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
                             {slides[current].title}
                         </h1>
 
@@ -107,14 +107,14 @@ const Hero = () => {
             {/* Controls */}
             <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden sm:flex"
                 aria-label="Previous slide"
             >
                 <ChevronLeft size={32} />
             </button>
             <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/10 transition-all hover:scale-110 hidden sm:flex"
                 aria-label="Next slide"
             >
                 <ChevronRight size={32} />
