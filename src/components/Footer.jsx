@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
-import logo from '../assets/chilogo.jpeg';
+import logo from '../assets/nylogo.png';
 
 const Footer = () => {
     return (
@@ -12,7 +12,7 @@ const Footer = () => {
                         <a href="#" className="inline-block mb-4">
                             <img
                                 src={logo}
-                                alt="Chizzy Restaurant"
+                                alt="Ladelicious Foods"
                                 className="h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md"
                             />
                         </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} className="text-brand-red" />
-                                <span>hello@chizzy.com</span>
+                                <span>hello@ladelicious.com</span>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +76,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-xs">
-                        &copy; {new Date().getFullYear()} Chizzy Restaurant. All rights reserved.
+                        &copy; {new Date().getFullYear()} Ladelicious Foods. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-gray-500 text-xs">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

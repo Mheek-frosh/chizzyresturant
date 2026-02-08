@@ -20,7 +20,7 @@ const About = () => {
                             Crafting Memories <br /> One Meal at a Time
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                            Founded in 2024, Chizzy Restaurant was born from a simple desire: to create a space where
+                            Founded in 2024, Ladelicious Foods was born from a simple desire: to create a space where
                             authentic Nigerian flavors meet modern culinary excellence. We believe that food is more than just sustenance—it's
                             an experience that brings people together.
                         </p>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/chilogo.jpeg';
+import logo from '../assets/nylogo.png';
 
 const Navbar = ({ cartCount, toggleCart }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -36,7 +36,7 @@ const Navbar = ({ cartCount, toggleCart }) => {
                     <a href="#" className="flex-shrink-0 flex items-center gap-2">
                         <img
                             src={logo}
-                            alt="Chizzy Restaurant"
+                            alt="Ladelicious Foods"
                             className="h-12 md:h-16 w-auto rounded-full object-cover border-2 border-white/20 shadow-md hover:scale-105 transition-transform duration-300"
                         />
                     </a>

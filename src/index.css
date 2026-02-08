@@ -3,7 +3,7 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Outfit', system-ui, sans-serif;
-  --color-brand-red: #D90429;
+  --color-brand-red: #562914;
   --color-brand-black: #0D0D0D;
   --color-brand-gray: #F4F4F4;
 }
@@ -47,22 +47,33 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
 /* Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {

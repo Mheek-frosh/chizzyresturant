@@ -23,7 +23,7 @@ const Reservation = () => {
                     <span className="text-brand-red font-bold tracking-widest uppercase text-sm mb-4 block">Book a Table</span>
                     <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">Reservation</h2>
                     <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-                        Secure your spot at Chizzy Restaurant. Whether it's a romantic dinner or a family gathering,
+                        Secure your spot at Ladelicious Foods. Whether it's a romantic dinner or a family gathering,
                         we promise an unforgettable experience.
                     </p>
                 </motion.div>

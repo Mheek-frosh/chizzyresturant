@@ -22,7 +22,7 @@ const slides = [
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2000",
         subtitle: "Exquisite Dining Experience",
         title: "Moments to Remember",
-        description: "Great food, perfect ambiance, and unforgettable memories await you at Chizzy Restaurant."
+        description: "Great food, perfect ambiance, and unforgettable memories await you at Ladelicious Foods."
     }
 ];
 

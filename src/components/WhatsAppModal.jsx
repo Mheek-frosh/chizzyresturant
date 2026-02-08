@@ -51,7 +51,7 @@ const WhatsAppModal = ({ isOpen, onClose, cartItems }) => {
         if (formData.address) message += `*📍 Delivery Address:* ${formData.address}%0A`;
         if (formData.note) message += `*💬 Note:* ${formData.note}%0A`;
 
-        message += "%0A_Sent via Chizzy Resturant Premium Concierge_";
+        message += "%0A_Sent via Ladelicious Foods Premium Concierge_";
 
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         onClose();
@@ -95,7 +95,7 @@ const WhatsAppModal = ({ isOpen, onClose, cartItems }) => {
                                         <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-400 border-2 border-brand-red rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="font-display font-bold text-xl leading-none mb-1">Chizzy Concierge</h3>
+                                        <h3 className="font-display font-bold text-xl leading-none mb-1">Ladelicious Concierge</h3>
                                         <p className="text-xs text-red-100 font-light tracking-wide">Premium Order Support</p>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ const WhatsAppModal = ({ isOpen, onClose, cartItems }) => {
                             {/* Greeting */}
                             <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
                                 <p className="text-gray-700 text-sm leading-relaxed">
-                                    Hello! 👋 Welcome to Chizzy's premium ordering service.
+                                    Hello! 👋 Welcome to Ladelicious Foods' premium ordering service.
                                     <br /><span className="mt-2 block text-gray-500 text-xs">Tell us what you're craving, and we'll handle the rest.</span>
                                 </p>
                             </div>
